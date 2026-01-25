@@ -1,6 +1,7 @@
 .services {
     background: var(--neutral-50);
     position: relative;
+    overflow: hidden;
 }
 
 .services::before {

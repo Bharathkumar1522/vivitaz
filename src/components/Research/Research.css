@@ -1,6 +1,7 @@
 .research {
     background: var(--neutral-50);
     position: relative;
+    overflow: hidden;
 }
 
 .research-grid {
