@@ -1,0 +1,207 @@
+.about {
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--primary-100) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+}
+
+.about-content {
+    position: relative;
+    z-index: 1;
+}
+
+.about-subtitle {
+    display: inline-block;
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--primary-600);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-4);
+}
+
+.about-title {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--neutral-900);
+    margin-bottom: var(--space-6);
+    line-height: var(--leading-tight);
+}
+
+.about-description {
+    font-size: var(--text-lg);
+    color: var(--neutral-600);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-6);
+}
+
+.about-features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+}
+
+.about-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+}
+
+.about-feature-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-100);
+    color: var(--primary-700);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+}
+
+.about-feature-text {
+    font-size: var(--text-base);
+    color: var(--neutral-700);
+}
+
+.about-feature-text strong {
+    color: var(--neutral-900);
+}
+
+/* Image Section */
+.about-image-wrapper {
+    position: relative;
+}
+
+.about-image {
+    position: relative;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+
+.about-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.about-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            transparent 50%,
+            rgba(6, 78, 59, 0.3) 100%);
+}
+
+/* Floating Badge */
+.about-badge {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    background: var(--white);
+    padding: var(--space-5);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.about-badge-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: var(--text-2xl);
+}
+
+.about-badge-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-badge-number {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--neutral-900);
+}
+
+.about-badge-label {
+    font-size: var(--text-sm);
+    color: var(--neutral-500);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+    }
+
+    .about-image-wrapper {
+        order: -1;
+    }
+
+    .about-image img {
+        height: 400px;
+    }
+
+    .about-badge {
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 480px) {
+    .about-title {
+        font-size: var(--text-2xl);
+    }
+
+    .about-description {
+        font-size: var(--text-base);
+    }
+
+    .about-image img {
+        height: 250px;
+    }
+
+    .about-badge {
+        padding: var(--space-3);
+        gap: var(--space-2);
+    }
+
+    .about-badge-icon {
+        width: 40px;
+        height: 40px;
+        font-size: var(--text-lg);
+    }
+
+    .about-badge-number {
+        font-size: var(--text-lg);
+    }
+}
