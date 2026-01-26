@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FiMail, FiPhone, FiMapPin, FiArrowRight, FiArrowUp } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiArrowRight } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import './Footer.css';
 
@@ -14,7 +12,6 @@ const quickLinks = [
 
 const serviceLinks = [
     { label: 'Drug Therapy', href: '#' },
-    { label: 'Health Supplements', href: '#' },
     { label: 'CO2 Extracts', href: '#products' },
     { label: 'Herbal Extracts', href: '#products' },
 ];
@@ -24,24 +21,6 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-    const [showScrollTop, setShowScrollTop] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 100) {
-                setShowScrollTop(true);
-            } else {
-                setShowScrollTop(false);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
 
     const handleNavClick = (href: string) => {
         const element = document.querySelector(href);
@@ -162,22 +141,6 @@ export default function Footer() {
                     <p className="footer-copyright">
                         © {currentYear} <strong>VIVITAZ Healthcare Private Limited</strong>. All rights reserved.
                     </p>
-                    <AnimatePresence>
-                        {showScrollTop && (
-                            <motion.button
-                                className="back-to-top"
-                                onClick={scrollToTop}
-                                initial={{ opacity: 0, scale: 0.5 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.5 }}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                aria-label="Back to top"
-                            >
-                                <FiArrowUp />
-                            </motion.button>
-                        )}
-                    </AnimatePresence>
                 </div>
             </div>
         </footer>

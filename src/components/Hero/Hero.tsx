@@ -67,16 +67,20 @@ export default function Hero() {
                         transition={{ duration: 0.8, delay: 0.5 }}
                     >
                         <div className="hero-stat">
+                            <span className="hero-stat-value">380+</span>
+                            <span className="hero-stat-label">Professionals</span>
+                        </div>
+                        <div className="hero-stat">
                             <span className="hero-stat-value">5+</span>
-                            <span className="hero-stat-label">Years Exp.</span>
+                            <span className="hero-stat-label">Years</span>
                         </div>
                         <div className="hero-stat">
-                            <span className="hero-stat-value">25+</span>
-                            <span className="hero-stat-label">Products</span>
-                        </div>
-                        <div className="hero-stat">
-                            <span className="hero-stat-value">1K+</span>
+                            <span className="hero-stat-value">970+</span>
                             <span className="hero-stat-label">Clients</span>
+                        </div>
+                        <div className="hero-stat">
+                            <span className="hero-stat-value">44000+</span>
+                            <span className="hero-stat-label">Sq. Meters</span>
                         </div>
                     </motion.div>
                 </div>
