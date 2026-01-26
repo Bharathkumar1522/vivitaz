@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiActivity, FiDroplet, FiHeart, FiSun, FiArrowRight } from 'react-icons/fi';
+import { FiActivity, FiHeart, FiSun, FiArrowRight } from 'react-icons/fi';
 import { useInView } from '../../hooks/useInView';
 import './Services.css';
 
@@ -8,11 +8,6 @@ const services = [
         icon: <FiActivity />,
         title: 'Drug Therapy',
         description: 'Advanced pharmaceutical solutions relying on pharmacology for continual advancement and appropriate management.',
-    },
-    {
-        icon: <FiDroplet />,
-        title: 'Nutrition',
-        description: 'Essential nutrients including foodstuff, food substances that can be metabolized to give energy and build tissue.',
     },
     {
         icon: <FiHeart />,

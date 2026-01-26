@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
-import { FaWhatsapp, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaWhatsapp } from 'react-icons/fa';
 import { useInView } from '../../hooks/useInView';
 import './Contact.css';
 
@@ -15,8 +15,8 @@ const contactDetails = [
     {
         icon: <FiPhone />,
         label: 'Phone Number',
-        value: '+91 9980139802',
-        href: 'tel:+919980139802',
+        value: '+91 9849660730',
+        href: 'tel:+919849660730',
     },
     {
         icon: <FiMapPin />,
@@ -28,8 +28,6 @@ const contactDetails = [
 
 const socialLinks = [
     { icon: <FaWhatsapp />, href: '#', label: 'WhatsApp' },
-    { icon: <FaInstagram />, href: '#', label: 'Instagram' },
-    { icon: <FaLinkedinIn />, href: '#', label: 'LinkedIn' },
 ];
 
 export default function Contact() {

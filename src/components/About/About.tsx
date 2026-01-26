@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
-import { FiCheck, FiAward } from 'react-icons/fi';
+import { FiCheck } from 'react-icons/fi';
 import { useInView } from '../../hooks/useInView';
 import './About.css';
 
 const features = [
-    { text: 'FSSAI Approved manufacturing facility' },
     { text: 'Export and Import License for global trade' },
     { text: 'Specialists in Nutraceuticals & Pharmaceuticals' },
     { text: 'Herbal products & Dietary supplements' },
@@ -29,10 +28,7 @@ export default function About() {
                             Who We Are
                         </h2>
                         <p className="about-description">
-                            VIVITAZ Healthcare Private Limited is an Indian Company specializing in Product
-                            Manufacturing (TPM) of Nutraceuticals, Pharmaceuticals, Herbal products, Food products,
-                            and FMCG products. With Export and Import licence, we serve clients globally from our
-                            facility in Nellore, India.
+                            VIVITAZ Healthcare Private Limited is established to carry on the business of manufacture, produce, develops, buy, sell, wholesale, retail, trade, and deals of nutraceutical products, health and wellness, pharmaceutical and health supplement products, liquid filled hard gelatin / HMPC capsules often derived from food sources or dietary supplements.
                         </p>
                         <p className="about-description">
                             Our trade mark covers Pharmaceuticals, medical and veterinary preparations, sanitary
@@ -82,21 +78,6 @@ export default function About() {
                             />
                             <div className="about-image-overlay"></div>
                         </div>
-
-                        <motion.div
-                            className="about-badge"
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                            transition={{ delay: 0.6, duration: 0.4 }}
-                        >
-                            <div className="about-badge-icon">
-                                <FiAward />
-                            </div>
-                            <div className="about-badge-content">
-                                <span className="about-badge-number">FSSAI</span>
-                                <span className="about-badge-label">Certified Company</span>
-                            </div>
-                        </motion.div>
                     </motion.div>
                 </div>
             </div>

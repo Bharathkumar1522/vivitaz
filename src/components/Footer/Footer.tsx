@@ -1,6 +1,7 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FiMail, FiPhone, FiMapPin, FiArrowRight, FiArrowUp } from 'react-icons/fi';
-import { FaWhatsapp, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaWhatsapp } from 'react-icons/fa';
 import './Footer.css';
 
 const quickLinks = [
@@ -20,11 +21,24 @@ const serviceLinks = [
 
 const socialLinks = [
     { icon: <FaWhatsapp />, href: '#', label: 'WhatsApp' },
-    { icon: <FaInstagram />, href: '#', label: 'Instagram' },
-    { icon: <FaLinkedinIn />, href: '#', label: 'LinkedIn' },
 ];
 
 export default function Footer() {
+    const [showScrollTop, setShowScrollTop] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                setShowScrollTop(true);
+            } else {
+                setShowScrollTop(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
@@ -129,7 +143,7 @@ export default function Footer() {
                                 <FiPhone />
                             </div>
                             <div className="footer-contact-text">
-                                <a href="tel:+919980139802">+91 9980139802</a>
+                                <a href="tel:+919849660730">+91 9849660730</a>
                             </div>
                         </div>
                         <div className="footer-contact-item">
@@ -148,15 +162,22 @@ export default function Footer() {
                     <p className="footer-copyright">
                         © {currentYear} <strong>VIVITAZ Healthcare Private Limited</strong>. All rights reserved.
                     </p>
-                    <motion.button
-                        className="back-to-top"
-                        onClick={scrollToTop}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        aria-label="Back to top"
-                    >
-                        <FiArrowUp />
-                    </motion.button>
+                    <AnimatePresence>
+                        {showScrollTop && (
+                            <motion.button
+                                className="back-to-top"
+                                onClick={scrollToTop}
+                                initial={{ opacity: 0, scale: 0.5 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.5 }}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                aria-label="Back to top"
+                            >
+                                <FiArrowUp />
+                            </motion.button>
+                        )}
+                    </AnimatePresence>
                 </div>
             </div>
         </footer>

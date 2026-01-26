@@ -42,25 +42,25 @@ function AnimatedCounter({ target, isInView, duration = 2 }: AnimatedCounterProp
 const stats = [
     {
         icon: <FiUsers />,
-        value: 5,
+        value: 380,
         suffix: '+',
         label: 'Professionals in Our Team',
     },
     {
         icon: <FiCalendar />,
-        value: 1,
+        value: 5,
         suffix: '+',
         label: 'Years of Successful Work',
     },
     {
         icon: <FiSmile />,
-        value: 10,
+        value: 970,
         suffix: '+',
         label: 'Satisfied Clients',
     },
     {
         icon: <FiPackage />,
-        value: 1500,
+        value: 44000,
         suffix: '+',
         label: 'Square Meters Warehouse',
     },
