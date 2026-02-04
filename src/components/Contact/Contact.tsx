@@ -45,8 +45,18 @@ export default function Contact() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Form submission logic will be added later
-        console.log('Form submitted:', formData);
+
+        // Create mailto link with form data
+        const subject = encodeURIComponent(`Contact Form Submission from ${formData.name}`);
+        const body = encodeURIComponent(
+            `Name: ${formData.name}\n` +
+            `Email: ${formData.email}\n` +
+            `Phone: ${formData.phone || 'Not provided'}\n\n` +
+            `Message:\n${formData.message}`
+        );
+
+        // Open Gmail (or default email client) with pre-filled data
+        window.location.href = `mailto:info@vivitaz.com?subject=${subject}&body=${body}`;
     };
 
     return (

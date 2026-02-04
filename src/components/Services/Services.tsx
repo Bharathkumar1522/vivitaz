@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiActivity, FiHeart, FiSun, FiArrowRight } from 'react-icons/fi';
+import { FiActivity, FiHeart, FiSun } from 'react-icons/fi';
 import { useInView } from '../../hooks/useInView';
 import './Services.css';
 
@@ -75,9 +75,9 @@ export default function Services() {
                             <div className="service-icon">{service.icon}</div>
                             <h3 className="service-title">{service.title}</h3>
                             <p className="service-description">{service.description}</p>
-                            <div className="service-learn-more">
+                            {/* <div className="service-learn-more">
                                 Learn More <FiArrowRight />
-                            </div>
+                            </div> */}
                         </motion.div>
                     ))}
                 </motion.div>
