@@ -1,12 +1,16 @@
+import { lazy, Suspense } from 'react';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
-import About from './components/About/About';
-import Services from './components/Services/Services';
-import Products from './components/Products/Products';
-import Research from './components/Research/Research';
-import Stats from './components/Stats/Stats';
-import Contact from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
+import Spinner from './components/Spinner/Spinner';
+
+const About = lazy(() => import('./components/About/About'));
+const Services = lazy(() => import('./components/Services/Services'));
+const Products = lazy(() => import('./components/Products/Products'));
+const Research = lazy(() => import('./components/Research/Research'));
+const Stats = lazy(() => import('./components/Stats/Stats'));
+const Contact = lazy(() => import('./components/Contact/Contact'));
+const Footer = lazy(() => import('./components/Footer/Footer'));
 
 export default function App() {
   return (
@@ -14,14 +18,22 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <About />
-        <Services />
-        <Products />
-        <Research />
-        <Stats />
-        <Contact />
+        <ErrorBoundary>
+          <Suspense fallback={<Spinner />}>
+            <About />
+            <Services />
+            <Products />
+            <Research />
+            <Stats />
+            <Contact />
+          </Suspense>
+        </ErrorBoundary>
       </main>
-      <Footer />
+      <ErrorBoundary>
+        <Suspense fallback={<Spinner />}>
+          <Footer />
+        </Suspense>
+      </ErrorBoundary>
     </>
   );
 }
