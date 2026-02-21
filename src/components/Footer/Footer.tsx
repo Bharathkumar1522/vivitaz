@@ -1,5 +1,4 @@
-import { FiMail, FiPhone, FiMapPin, FiArrowRight } from 'react-icons/fi';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FiMail, FiMapPin, FiArrowRight } from 'react-icons/fi';
 import './Footer.css';
 
 const quickLinks = [
@@ -16,9 +15,7 @@ const serviceLinks = [
     { label: 'Herbal Extracts', href: '#products' },
 ];
 
-const socialLinks = [
-    { icon: <FaWhatsapp />, href: '#', label: 'WhatsApp' },
-];
+const socialLinks: { icon: JSX.Element; href: string; label: string }[] = [];
 
 export default function Footer() {
 
@@ -115,14 +112,6 @@ export default function Footer() {
                             </div>
                             <div className="footer-contact-text">
                                 Nellore, Andhra Pradesh, India
-                            </div>
-                        </div>
-                        <div className="footer-contact-item">
-                            <div className="footer-contact-icon">
-                                <FiPhone />
-                            </div>
-                            <div className="footer-contact-text">
-                                <a href="tel:+919849660730">+91 9849660730</a>
                             </div>
                         </div>
                         <div className="footer-contact-item">

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FiMail, FiMapPin } from 'react-icons/fi';
 import { useInView } from '../../hooks/useInView';
 import './Contact.css';
 
@@ -13,12 +12,6 @@ const contactDetails = [
         href: 'mailto:info@vivitaz.com',
     },
     {
-        icon: <FiPhone />,
-        label: 'Phone Number',
-        value: '+91 9849660730',
-        href: 'tel:+919849660730',
-    },
-    {
         icon: <FiMapPin />,
         label: 'Location',
         value: 'Nellore, Andhra Pradesh, India',
@@ -26,9 +19,7 @@ const contactDetails = [
     },
 ];
 
-const socialLinks = [
-    { icon: <FaWhatsapp />, href: '#', label: 'WhatsApp' },
-];
+const socialLinks: { icon: JSX.Element; href: string; label: string }[] = [];
 
 export default function Contact() {
     const [ref, isInView] = useInView<HTMLElement>({ threshold: 0.1 });
@@ -50,8 +41,7 @@ export default function Contact() {
         const subject = encodeURIComponent(`Contact Form Submission from ${formData.name}`);
         const body = encodeURIComponent(
             `Name: ${formData.name}\n` +
-            `Email: ${formData.email}\n` +
-            `Phone: ${formData.phone || 'Not provided'}\n\n` +
+            `Email: ${formData.email}\n\n` +
             `Message:\n${formData.message}`
         );
 
@@ -163,20 +153,6 @@ export default function Contact() {
                                 </div>
                             </div>
 
-                            <div className="form-group">
-                                <label className="form-label" htmlFor="phone">
-                                    Phone Number
-                                </label>
-                                <input
-                                    type="tel"
-                                    id="phone"
-                                    name="phone"
-                                    className="form-input"
-                                    placeholder="+91 1234567890"
-                                    value={formData.phone}
-                                    onChange={handleChange}
-                                />
-                            </div>
 
                             <div className="form-group">
                                 <label className="form-label" htmlFor="message">
